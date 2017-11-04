@@ -69,10 +69,14 @@ namespace PerformanceIssue
             return substrings;
         }
 
-        private bool ValidateInput(string S)
+        private bool ValidateInput(string input)
         {
-            if (S == null || S.Length < 4 || S.Length > 100000 ||
-                !Regex.IsMatch(S, "^[A-Z]+$"))
+            const int MinLength = 4;
+            const int MaxLength = (int) 1E5;
+            const string ValidationPattern = "^[A-Z]+$";
+
+            if (input == null || input.Length < MinLength || input.Length > MaxLength ||
+                !Regex.IsMatch(input, ValidationPattern))
             {
                 return false;
             }
