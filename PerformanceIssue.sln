@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceIssue", "PerformanceIssue\PerformanceIssue.csproj", "{1A020DA5-D898-4F98-8272-845E2542DB3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceIssue.Core", "PerformanceIssue\PerformanceIssue.Core.csproj", "{1A020DA5-D898-4F98-8272-845E2542DB3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceIssue.Tests", "PerformanceIssue.Tests\PerformanceIssue.Tests.csproj", "{687ECEE3-182D-4406-9DDC-CB098D3FA796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1A020DA5-D898-4F98-8272-845E2542DB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A020DA5-D898-4F98-8272-845E2542DB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A020DA5-D898-4F98-8272-845E2542DB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687ECEE3-182D-4406-9DDC-CB098D3FA796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687ECEE3-182D-4406-9DDC-CB098D3FA796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687ECEE3-182D-4406-9DDC-CB098D3FA796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687ECEE3-182D-4406-9DDC-CB098D3FA796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

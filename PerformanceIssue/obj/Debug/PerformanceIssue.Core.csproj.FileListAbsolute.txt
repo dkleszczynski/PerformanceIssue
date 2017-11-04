@@ -1,6 +1,6 @@
 D:\Avid\PerformanceIssue\PerformanceIssue\bin\Debug\PerformanceIssue.exe.config
 D:\Avid\PerformanceIssue\PerformanceIssue\bin\Debug\PerformanceIssue.exe
 D:\Avid\PerformanceIssue\PerformanceIssue\bin\Debug\PerformanceIssue.pdb
-D:\Avid\PerformanceIssue\PerformanceIssue\obj\Debug\PerformanceIssue.csproj.CoreCompileInputs.cache
+D:\Avid\PerformanceIssue\PerformanceIssue\obj\Debug\PerformanceIssue.Core.csproj.CoreCompileInputs.cache
 D:\Avid\PerformanceIssue\PerformanceIssue\obj\Debug\PerformanceIssue.exe
 D:\Avid\PerformanceIssue\PerformanceIssue\obj\Debug\PerformanceIssue.pdb

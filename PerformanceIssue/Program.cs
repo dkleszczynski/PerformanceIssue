@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PerformanceIssue
+namespace PerformanceIssue.Core
 {
     class Program
     {
         
         static void Main(string[] args)
         {
-        
+           
         }
 
         

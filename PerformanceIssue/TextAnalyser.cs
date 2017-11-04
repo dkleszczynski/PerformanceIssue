@@ -5,9 +5,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace PerformanceIssue
+namespace PerformanceIssue.Core
 {
-    class TextAnalyser
+    public class TextAnalyser
     {
         public int Solution(string text)
         {
@@ -22,6 +22,29 @@ namespace PerformanceIssue
             for (int i = 0; i < substrings.Count; i++)
             {
                 uniqueCount += GetUniqueLettersCount(substrings[i]);
+            }
+
+            return uniqueCount;
+        }
+
+        public int Solution_2(string text)
+        {
+            if (!ValidateInput(text))
+            {
+                return -1;
+            }
+
+            int uniqueCount = GetUniqueLettersCount(text);
+            List<string> substrings = null;
+
+            for (int l = 1; l < text.Length; l++)
+            {
+                substrings = GetAllSubstrings(text, l);
+
+                for (int i = 0; i < substrings.Count; i++)
+                {
+                    uniqueCount += GetUniqueLettersCount(substrings[i]);
+                }
             }
 
             return uniqueCount;
@@ -64,6 +87,19 @@ namespace PerformanceIssue
                     string substring = text.Substring(start, length);
                     substrings.Add(substring);
                 }
+            }
+
+            return substrings;
+        }
+
+        private List<string> GetAllSubstrings(string text, int substringLength)
+        {
+            List<string> substrings = new List<string>();
+
+            for (int start = 0; start <= text.Length - substringLength; start++)
+            {
+                string substring = text.Substring(start, substringLength);
+                substrings.Add(substring);
             }
 
             return substrings;
