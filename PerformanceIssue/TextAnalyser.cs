@@ -60,7 +60,7 @@ namespace PerformanceIssue.Core
                 return -1;
             }
 
-            int uniqueCount = GetUniqueLettersCount(text);
+            int totalCount = GetUniqueLettersCount(text);
 
             Parallel.For(1, text.Length, (length) =>
             {
@@ -68,15 +68,16 @@ namespace PerformanceIssue.Core
 
                 for (int i = 0; i < substrings.Count; i++)
                 {
+                    int count = GetUniqueLettersCount(substrings[i]);
+
                     lock (resourceLock)
                     {
-                        uniqueCount += GetUniqueLettersCount(substrings[i]);
+                        totalCount += count;
                     }
-                   
                 }
             });
 
-            return uniqueCount;
+            return totalCount;
         }
         
         private int GetUniqueLettersCount(string S)
