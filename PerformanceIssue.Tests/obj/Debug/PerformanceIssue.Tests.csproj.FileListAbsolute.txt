@@ -15,5 +15,5 @@ D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\xunit.runner.visualstu
 D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\xunit.runner.reporters.net452.dll
 D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\xunit.runner.utility.net452.dll
 D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\PerformanceIssue.exe
-D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\PerformanceIssue.pdb
 D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\PerformanceIssue.exe.config
+D:\Avid\PerformanceIssue\PerformanceIssue.Tests\bin\Debug\PerformanceIssue.pdb

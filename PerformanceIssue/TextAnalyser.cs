@@ -4,21 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PerformanceIssue.Core
 {
     public class TextAnalyser
-    {
+    { 
+        private object resourceLock = new object();
+        
         public int Solution(string text)
-        {
+        { 
             if (!ValidateInput(text))
-            {
+            { 
                 return -1;
             }
 
             int uniqueCount = GetUniqueLettersCount(text);
             List<string> substrings = GetAllSubstrings(text);
-
+               
             for (int i = 0; i < substrings.Count; i++)
             {
                 uniqueCount += GetUniqueLettersCount(substrings[i]);
@@ -27,7 +30,7 @@ namespace PerformanceIssue.Core
             return uniqueCount;
         }
 
-        public int Solution_2(string text)
+        public int SolutionImproved(string text)
         {
             if (!ValidateInput(text))
             {
@@ -40,7 +43,7 @@ namespace PerformanceIssue.Core
             for (int l = 1; l < text.Length; l++)
             {
                 substrings = GetAllSubstrings(text, l);
-
+                                
                 for (int i = 0; i < substrings.Count; i++)
                 {
                     uniqueCount += GetUniqueLettersCount(substrings[i]);
@@ -49,7 +52,33 @@ namespace PerformanceIssue.Core
 
             return uniqueCount;
         }
+        
+        public int SolutionMultiThread(string text)
+        {
+            if (!ValidateInput(text))
+            {
+                return -1;
+            }
 
+            int uniqueCount = GetUniqueLettersCount(text);
+
+            Parallel.For(1, text.Length, (length) =>
+            {
+                List<string> substrings = GetAllSubstrings(text, length);
+
+                for (int i = 0; i < substrings.Count; i++)
+                {
+                    lock (resourceLock)
+                    {
+                        uniqueCount += GetUniqueLettersCount(substrings[i]);
+                    }
+                   
+                }
+            });
+
+            return uniqueCount;
+        }
+        
         private int GetUniqueLettersCount(string S)
         {
             char[] chars = S.ToCharArray();
